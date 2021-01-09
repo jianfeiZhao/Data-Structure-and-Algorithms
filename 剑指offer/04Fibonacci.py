@@ -26,6 +26,7 @@ def Fibonacci2(n):
         n -= 1
     return i
 
+assert Fibonacci2(1) == 1
 assert Fibonacci2(2) == 1
 assert Fibonacci2(3) == 2
 assert Fibonacci2(5) == 5

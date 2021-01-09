@@ -25,7 +25,7 @@ class Solution:
             return 0
         while (right-left) != 1:
             mid = int((left + right)/2)
-            if arr[mid] == arr[left] and arr[right]:
+            if arr[mid] == arr[left] == arr[right]:
                 return min(arr)
             if arr[left] < arr[mid]:
                 left = mid
@@ -34,10 +34,12 @@ class Solution:
         mid = right
         return arr[mid]
 
-#arr = [4,5,6,7,8,9,2,3]
-arr = [1,0,1,1,1,1,1]
+
+arr1 = [4,5,6,7,8,9,2,3]
+arr2 = [1,0,1,1,1,1,1]
 
 s = Solution()
-print(s.S1(arr))
-print(s.S2(arr))
+assert s.S1(arr1) == 2
+assert s.S1(arr2) == 0
+print('test pass!')
             
