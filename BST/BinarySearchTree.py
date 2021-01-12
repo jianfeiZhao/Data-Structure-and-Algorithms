@@ -1,4 +1,4 @@
-# Binary Search Tree in Python
+# Binary Search Tree in Python(assume all the value are unique)
 class Node:
     def __init__(self, val):
         self.value = val
@@ -228,9 +228,9 @@ class Tree:
 
 def main():
     bst = Tree()
-    ls = [10,5,2,7,11,14]
+    ls = [10,5,2,7,7,11,14]
     for i in ls:
-        bst.insert(i)
+        print(bst.insert(i))
     
     bst.preorder()
     bst.inorder()
