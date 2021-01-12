@@ -76,18 +76,18 @@ class Node:
     def postorder(self):
         if self:
             if self.leftChild:
-                self.leftChild.preorder()
+                self.leftChild.postorder()
             if self.rightChild:
-                self.rightChild.preorder()
+                self.rightChild.postorder()
             print(str(self.value))
 
     def inorder(self):
         if self:
             if self.leftChild:
-                self.leftChild.preorder()
+                self.leftChild.inorder()
             print(str(self.value))
             if self.rightChild:
-                self.rightChild.preorder()
+                self.rightChild.inorder()
 
 class Tree:
     def __init__(self):
@@ -227,17 +227,18 @@ class Tree:
             self.root.inorder()
 
 def main():
-	bst = Tree()
-	print(bst.insert(10))
-	print(bst.insert(5))
-	bst.insert(2)
-	bst.insert(7)
-	bst.preorder()
-	print('Height = ', bst.getHeight())
-	print('Size = ', bst.getSize())
+    bst = Tree()
+    ls = [10,5,2,7,11,14]
+    for i in ls:
+        bst.insert(i)
+    
+    bst.preorder()
+    bst.inorder()
+    print('Height = ', bst.getHeight())
+    print('Size = ', bst.getSize())
 	#bst.postorder()
 	#bst.inorder()
-	print(bst.remove(10))
-	bst.preorder()
+    print(bst.remove(10))
+    bst.preorder()
 	
 main()
