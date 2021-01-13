@@ -241,4 +241,5 @@ def main():
     print(bst.remove(10))
     bst.preorder()
 	
-main()
+if __name__ == '__main__':
+    main()
