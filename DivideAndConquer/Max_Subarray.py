@@ -13,7 +13,7 @@ def maxSubarray(arr, low=None, high=None):
     m1 = maxSubarray(arr, low, mid)     # find max sum in left half
     m2 = maxSubarray(arr, mid+1, high)     # find max sum in right half
     m3 = maxCrossSubarray(arr, low, mid, high)    # find max sum cross the subarray
-  
+    
     return max(m1, m2, m3)
 
 def maxCrossSubarray(arr, low, mid, high):
@@ -33,7 +33,7 @@ def maxCrossSubarray(arr, low, mid, high):
             rightSum = sum
             maxRight = j
 
-    return leftSum + rightSum 
+    return leftSum + rightSum
 
 if __name__ == '__main__':
     arr = [10, -4, 2, 11, -8, 9, -5, 13, -14, 12, -7, -6, 15, -1, 3]

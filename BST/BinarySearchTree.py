@@ -40,7 +40,7 @@ class Node:
                 return False
     
     def getSize(self):
-        if self.leftChild and self.rightChild:
+        if self.leftChild != None and self.rightChild != None:
             return 1 + self.leftChild.getSize() + self.rightChild.getSize()
         
         elif self.leftChild:
@@ -233,11 +233,10 @@ def main():
         print(bst.insert(i))
     
     bst.preorder()
-    bst.inorder()
     print('Height = ', bst.getHeight())
     print('Size = ', bst.getSize())
-	#bst.postorder()
-	#bst.inorder()
+    bst.postorder()
+    bst.inorder()
     print(bst.remove(10))
     bst.preorder()
 	
