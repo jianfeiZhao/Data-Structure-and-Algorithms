@@ -100,7 +100,7 @@ class LinkedList (object):
 			return newll
 		return self
 		
-def main():
+if __name__ == '__main__':
 	myList = LinkedList()
 	myList.add(5)
 	myList.add(9)
@@ -117,5 +117,3 @@ def main():
 	print("size="+str(myList.get_size()))
 	print("Find 25", myList.find(25))
 	myList.print_list()
-	
-main()

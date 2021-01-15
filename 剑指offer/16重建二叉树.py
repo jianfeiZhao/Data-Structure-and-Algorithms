@@ -18,7 +18,7 @@ class Solution:
         if len(pre) == 0:
             return None
         root = Node(pre[0])
-        pos = tin.index(pre[0]) #根节点在中序遍历中的index，看作左子树的节点个数
+        pos = tin.index(pre[0]) ### 根节点在中序遍历中的index，看作左子树的节点个数
         root.leftChild = self.reconstructBinaryTree(pre[1:1+pos], tin[:pos])
         root.rightChild = self.reconstructBinaryTree(pre[pos+1:], tin[pos+1:])
         return root
