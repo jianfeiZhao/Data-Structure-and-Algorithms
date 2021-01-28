@@ -40,3 +40,4 @@ for i in ls:
 
 s = Solution()
 print(s.findPath(bst.root, 21))
+print(s.findPath(bst.root, 22))
