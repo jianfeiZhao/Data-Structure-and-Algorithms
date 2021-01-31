@@ -31,3 +31,37 @@ class Solution:
             if p.random != None:
                 p.next.random = p.random.next
             p = p.next.next
+        # rebuild the linked list which only includes the copied nodes
+        vhead = RandomListNode(0)  # init
+        q = vhead
+        p = pHead
+        while p != None:
+            q.next = p.next
+            #p.next = p.next.next
+            q = q.next
+            p = p.next.next
+        return vhead.next
+
+# build a randomlinkedlist
+n1 = RandomListNode(2)
+n2 = RandomListNode(1)
+n3 = RandomListNode(-3)
+n4 = RandomListNode(4)
+n1.next = n2
+n2.next = n3
+n2.random = n1
+n3.next = n4
+n3.random = n4
+
+s = Solution()
+n1_copy = s.clone(n1)
+while n1_copy.next != None:
+    print(n1_copy.next.value)
+    if n1_copy.random != None:
+        print(n1_copy.random.value) 
+    print(' ')
+    n1_copy = n1_copy.next
+
+'''
+True answer: 1 None | -3 2 | 4 4
+'''
