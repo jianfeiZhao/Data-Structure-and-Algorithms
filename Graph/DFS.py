@@ -38,24 +38,18 @@ class Graph:
         else:
             return False
 
-    def dfs(self, vertex):
-        global time
-        time = 0
-        self.dfsVisit(vertex)
-
-    def dfsVisit(self, u):
-        global time
+    def dfs(self, u):
         u.color = 'gray'
-        u.distance = time    # discovery time
-        time += 1
+        u.distance = self.time    # discovery time
+        self.time += 1
         for v in u.neighbors:
             if self.vertices[v].color == 'white':
                 self.vertices[v].pred = u
-                self.dfsVisit(self.vertices[v])
+                self.dfs(self.vertices[v])
         
         u.color = 'black'
-        u.finish = time    # finish time
-        time += 1
+        u.finish = self.time    # finish time
+        self.time += 1
 
     def print_graph_dfs(self):
         for key in sorted(list(self.vertices.keys())):
@@ -75,7 +69,7 @@ def create_graph():
     
     return g, a
 
-
-g, a = create_graph()
-g.dfs(a)
-g.print_graph_dfs()
+if __name__ == '__main__':
+    g, a = create_graph()
+    g.dfs(a)
+    g.print_graph_dfs()

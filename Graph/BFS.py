@@ -71,7 +71,7 @@ def create_graph():
     
     return g, a
 
-
-g, a = create_graph()
-g.bfs(a)
-g.print_graph_bfs()
+if __name__ == '__main__':
+    g, a = create_graph()
+    g.bfs(a)
+    g.print_graph_bfs()
