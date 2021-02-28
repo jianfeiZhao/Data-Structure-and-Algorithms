@@ -26,20 +26,20 @@ class Solution:
         while (right-left) != 1:
             mid = int((left + right)/2)
             if arr[mid] == arr[left] == arr[right]:
-                return min(arr)
-            if arr[left] < arr[mid]:
+                return min(arr[left:right+1])
+            if arr[left] <= arr[mid]:
                 left = mid
             else:
                 right = mid
-        mid = right
-        return arr[mid]
+       # mid = right
+        return arr[right]
 
 
-arr1 = [4,5,6,7,8,9,2,3]
+arr1 = [4,5,6,7,8,9,2,2,2,2,3]
 arr2 = [1,0,1,1,1,1,1]
 
 s = Solution()
-assert s.S1(arr1) == 2
-assert s.S1(arr2) == 0
+assert s.S2(arr1) == 2
+assert s.S2(arr2) == 0
 print('test pass!')
             
