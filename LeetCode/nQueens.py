@@ -4,6 +4,9 @@ PS：皇后可以攻击同一行、同一列、左上左下右上右下四个方
 
 这个问题本质上跟全排列问题差不多，决策树的每一层表示棋盘上的每一行；
 每个节点可以做出的选择是，在该行的任意一列放置一个皇后。
+
+这个问题的复杂度非常高，虽然有 isValid 函数剪枝，但是最坏时间复杂度仍然是 O(N^(N+1))，而且无法优化.
+有的时候，我们并不想得到所有合法的答案，只想要一个答案.
 '''
 class Solution:
     res = []
@@ -14,23 +17,25 @@ class Solution:
         return self.res
 
     def backtrack(self, board, row):
-        # finish
+        ########### finish
         if row == len(board):
             board = [''.join(board[i]) for i in range(len(board))]
-            #print(board)
+            print(board)
             self.res.append(board)
-            return
+            return True
         
         n = len(board[row])
         for col in range(n):
             if not self.isValid(board, row, col):
                 continue
-            # choose
+            ########### choose
             board[row][col] = 'Q'
-            # next decision
-            self.backtrack(board, row+1)
-            # remove choice
+            ############ next decision
+            if self.backtrack(board, row+1):
+                return True
+            ############# remove choice
             board[row][col] = '.'
+        return False
 
     def isValid(self, board, row, col):
         n = len(board)
@@ -52,4 +57,4 @@ class Solution:
 
 
 s = Solution()
-print(s.nQueens(4))
+s.nQueens(8)
