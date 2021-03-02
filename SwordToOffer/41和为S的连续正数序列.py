@@ -18,5 +18,5 @@ class Solution:
         return result
 
 s = Solution()
-print(s.squenceSum(15))
-print(s.squenceSum(100))
+#print(s.squenceSum(15))
+print(s.squenceSum(1000))

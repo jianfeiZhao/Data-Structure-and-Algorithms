@@ -27,4 +27,4 @@ class Solution:
         return ls[-1]
 
 s = Solution()
-print(s.uglyNumber(100))
+print(s.uglyNumber(20))
