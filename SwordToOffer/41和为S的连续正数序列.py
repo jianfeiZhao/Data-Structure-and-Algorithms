@@ -10,13 +10,11 @@ class Solution:
             seq.append(i)
             seqSum += i
             while seqSum > S:
-                seqSum -= seq[0]
-                seq = seq[1:]
+                seqSum -= seq.pop(0)
             if seqSum == S:
-                #print(seq)
                 result.append(seq[::])
         return result
 
 s = Solution()
-#print(s.squenceSum(15))
-print(s.squenceSum(1000))
+print(s.squenceSum(15))
+#print(s.squenceSum(1000))
