@@ -23,7 +23,7 @@ def maxCrossSubarray(arr, low, mid, high):
         sum += arr[i]
         if sum > leftSum:
             leftSum = sum
-            maxLeft = i
+            #maxLeft = i
 
     rightSum = -1
     sum  = 0
@@ -31,10 +31,11 @@ def maxCrossSubarray(arr, low, mid, high):
         sum += arr[j]
         if sum > rightSum:
             rightSum = sum
-            maxRight = j
+            #maxRight = j
 
     return leftSum + rightSum
 
 if __name__ == '__main__':
     arr = [10, -4, 2, 11, -8, 9, -5, 13, -14, 12, -7, -6, 15, -1, 3]
-    print('Maximum subarray: ', maxSubarray(arr))
+    arr1 = [12,1,3,-1,-6]
+    print('Maximum subarray: ', maxSubarray(arr1))
