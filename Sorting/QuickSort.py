@@ -22,8 +22,8 @@ def swap(arr, a, b):
     arr[a], arr[b] = arr[b], arr[a]
 
 def quickSort(arr, left=None, right=None):
-    left = 0 if not isinstance(left, (int, float)) else left
-    right = len(arr)-1 if not isinstance(right, (int, float)) else right
+    if not left: left = 0 
+    if not right: right = len(arr)-1 
     if left < right:
         q = partition(arr, left, right)
         quickSort(arr, left, q-1)
