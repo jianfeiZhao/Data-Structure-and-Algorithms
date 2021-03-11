@@ -11,8 +11,8 @@ class Node:
  
 class Solution:
     def mergeTwoList(self, head1, head2):
-        p = Node(1)
-        new = p
+        p = Node(1)   # 指针
+        new = p    # 新建一个Node作为合并后的head
         while head1!=None and head2!=None:
             if head1.val < head2.val:
                 p.next = head1
@@ -21,7 +21,7 @@ class Solution:
                 p.next = head2
                 head2 = head2.next
             p = p.next   #记得更新p
-        if head1!=None: #注意不要写成while
+        if head1!=None:   #注意不要写成while
             p.next = head1
         if head2!=None:
             p.next = head2
