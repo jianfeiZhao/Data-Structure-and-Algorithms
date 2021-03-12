@@ -1,0 +1,26 @@
+'''
+基于Python语言写一个房价预测的算法出来，
+包含如下相关步骤：数据分析和探索、数据预处理、特征工程、模型定义、模型训练、模型评估；
+数据集：dataset.csv , 特征：房屋面积，距市中心距离，开发商
+
+'''
+import pandas as pd
+import numpy as np
+#from sklearn import data
+
+df = pd.read_csv('dataset.csv')
+# train test 划分
+X_train, X_test, y_train, y_test = train_test_split(df['..'])
+# 数据预处理
+print(X_train.isna().sum())   # 查看缺失值
+df.dropna()
+# 特征编码
+feature = [...]
+lb = LabelEncoder()
+X_train[feature] = lb.fit_transform(X_train[feature])
+X_test[feature] = lb.fit_transform(X_test[feature])
+
+model = LR(...)
+model.fit(X_train, y_train)
+predict = model.predict(X_test)
+model.evaluate(predict, y_test)
