@@ -21,33 +21,32 @@ class Solution:
                 return head
         return None
 
+    def hasCycle(self , head ):
+        # write code here
+        a, b = head, head
+        while b and b.next:
+            a, b = a.next, b.next.next
+            if a == b:
+                return True
+        return False
+
     '''
 第一步，找环中相汇点。分别用fast，slow指向链表头部，slow每次走一步，fast每次走二步，直到slow==fast找到在环中的相汇点。
 第二步，找环的入口。当slow==fast时，让其中一个指针指向链表头部，另一个位置不变，fast和slow每次都走一步直到再次slow==fast，此时指向的是环的入口。
     '''
-    def findCircleLs2(self, pHead):
-        if pHead == None:
-            return "null"
-
+    def findCircleLs2(self, head):
         # 找环中相汇点
-        if pHead.next!=None and pHead.next.next!=None:    #先跑一次以满足循环条件
-            fast = pHead.next.next
-            slow = pHead.next
-        else:
-            return None
-        while fast != slow:
-            if fast.next!=None or fast.next.next!=None:
-                fast = fast.next.next
-                slow = slow.next
-            else:
-                return None
+        a, b = head, head
+        while b and b.next:
+            a, b = a.next, b.next.next
+            if a == b:
+                # 找环的入口
+                b = head
+                while b != a:
+                    b = b.next
+                    a = a.next
+                return a
 
-        # 找环的入口
-        fast = pHead
-        while fast != slow:
-            fast = fast.next
-            slow = slow.next
-        return slow
 
 s = Solution()
 node1 = ListNode(1)
