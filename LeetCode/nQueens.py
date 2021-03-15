@@ -8,6 +8,8 @@ PS：皇后可以攻击同一行、同一列、左上左下右上右下四个方
 这个问题的复杂度非常高，虽然有 isValid 函数剪枝，但是最坏时间复杂度仍然是 O(N^(N+1))，而且无法优化.
 有的时候，我们并不想得到所有合法的答案，只想要一个答案.
 '''
+import copy
+
 class Solution:
     res = []
     def nQueens(self, n):
@@ -20,8 +22,7 @@ class Solution:
         ########### finish
         if row == len(board):
             board = [''.join(board[i]) for i in range(len(board))]
-            print(board)
-            self.res.append(board)
+            self.res.append(copy.deepcopy(board))
             return True
         
         n = len(board[row])
@@ -31,8 +32,9 @@ class Solution:
             ########### choose
             board[row][col] = 'Q'
             ############ next decision
-            if self.backtrack(board, row+1):
-                return True
+            #if self.backtrack(board, row+1):   # 只返回一个答案
+                #return True
+            self.backtrack(board, row+1)   # 返回所有答案
             ############# remove choice
             board[row][col] = '.'
         return False
@@ -57,4 +59,4 @@ class Solution:
 
 
 s = Solution()
-s.nQueens(8)
+print(s.nQueens(4))

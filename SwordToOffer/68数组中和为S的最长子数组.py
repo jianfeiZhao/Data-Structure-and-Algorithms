@@ -1,3 +1,5 @@
+import copy
+
 def maxSubSum(arr, S):
     if not arr: return []
     result = []
@@ -10,9 +12,8 @@ def maxSubSum(arr, S):
             seqSum -= seq.pop(0)
         if seqSum == S:
             if len(seq) > len(result):
-                result = seq
-                #print(result)
+                result = copy.deepcopy(seq)
     return result
 
-arr = [1,1,1,3,2,2]
-maxSubSum(arr, 4)
+arr = [1,1,1,3,2]
+print(maxSubSum(arr, 6))
