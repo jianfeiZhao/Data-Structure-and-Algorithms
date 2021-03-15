@@ -2,8 +2,8 @@
 Find the maximum sum of subarray
 '''
 def maxSubarray(arr, low=None, high=None):
-    low = 0 if not isinstance(low, (int, float)) else low
-    high = len(arr)-1 if not isinstance(high, (int, float)) else high
+    if not low: low = 0
+    if not high: high = len(arr)-1
 
     if low == high:
         return arr[low]

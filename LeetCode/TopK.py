@@ -22,7 +22,6 @@ def randomSelect(arr, i, low=None, high=None):
         return arr[low]
 
     q = partition(arr, low, high)
-    #print(arr[q])
     k = q-low+1     # the length from low to q, inclusive
     if i == k:
         return arr[q]
