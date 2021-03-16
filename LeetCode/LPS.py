@@ -25,6 +25,21 @@ class Solution:
                     dp[i][j] = max(dp[i+1][j], dp[i][j-1])
         return dp[0][n-1]
 
+    def getLongestPalindrome(self, A, n):
+        '''
+思路1（动态规划，O(n^2)）从第一个字符往后遍历，把每个字符都当作中心去向两边扩散，
+依次比较对称位置是否相等，当碰到左右边界停下。注意要分奇偶子串两种情况。
+        '''
+        def func(A, left, right):
+            while left >=0 and right < n and A[left]==A[right]:
+                left -= 1
+                right += 1
+            return right-left-1
+        res = 0
+        for i in range(n-1):
+            res = max(res, func(A, i, i), func(A, i, i+1))
+        return res
+
 s = Solution()
-ss = "bbbddb"
+ss = "bbdb"
 print(s.LPS(ss))
