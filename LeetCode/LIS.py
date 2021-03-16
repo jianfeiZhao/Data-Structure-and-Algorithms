@@ -3,23 +3,28 @@
 
 前后比较
 '''
+import copy
+
 class Solution:
     def LIS(self, arr):
         if not arr: return []
         else: res = [arr[0]]
-        ls = []
+        result = []
+        #ls = []
         for i in range(1, len(arr)):
             if arr[i] > res[-1]:
                 res.append(arr[i])
             else:
-                print(res)
-                ls.append(len(res))
+                if len(res) > len(result):
+                    result = copy.deepcopy(res)
+                #ls.append(len(res))
                 while res != [] and arr[i] < res[-1]:
                     res.pop()
                 res.append(arr[i])
-        print(res)
-        ls.append(len(res))
-        return max(ls)
+        if len(res) > len(result):
+            result = copy.deepcopy(res)
+        #ls.append(len(res))
+        return result
 
 
 s = Solution()
