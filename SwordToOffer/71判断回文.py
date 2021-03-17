@@ -19,3 +19,22 @@ class Solution:
             return func(str, mid-1, mid)
         if len(str)%2 == 1:
             return func(str, mid, mid)
+
+
+# 2
+while True:
+    try:
+        x = input()[1:-1].split(',')
+        end = len(x)-1
+        begin = 0
+        while end>begin:
+            if x[end]==x[begin]:
+                end -= 1
+                begin += 1
+            else:
+                print('false')
+                break
+        else:
+            print('true')
+    except:
+        break
