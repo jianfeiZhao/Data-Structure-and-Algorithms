@@ -9,7 +9,6 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
-        self.dis = 9999
 
 class Solution:
     def levelOrder(self , root ):
