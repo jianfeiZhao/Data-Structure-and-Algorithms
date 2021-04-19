@@ -1,3 +1,6 @@
+'''
+窗口从数组首部滑到尾部，记录窗口内的最大值
+'''
 class Solution:
     def maxInWindows(self, num, size):
         # write code here
