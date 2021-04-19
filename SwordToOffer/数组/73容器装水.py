@@ -29,3 +29,7 @@ class Solution:
             else:
                 sum_tmp+=tmp-i
         return get_water
+
+s = Solution()
+arr = [2,4,2,3,1,2,5,2]
+print(s.maxWater(arr))
