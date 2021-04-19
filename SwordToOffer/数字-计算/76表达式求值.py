@@ -38,7 +38,7 @@ class Solution:
             l.append(tempnum)
         while stack:
             l.append(stack.pop())
-        print(l)
+        #print(l)
         # 逆波兰法求后缀表达式的值
         for i in l:
             if i <= '9' and i >= '0':
@@ -56,3 +56,7 @@ class Solution:
                 if temp:
                     stack.append(temp)
         return int(stack.pop())
+
+s = Solution()
+print(s.solve('(1+2)*3'))   # 9
+print(s.solve('(1+2)*(3+4)+5'))   # 26
