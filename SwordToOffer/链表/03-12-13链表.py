@@ -59,23 +59,24 @@ class Solution:
             cur = tmp     # next node becomr cur node
         return pre
 
-# build linked list
-node1 = node([1,2,3])
-node2 = node([4,5,6])
-node3 = node([7,8])
-node4 = node([9])
-node1.next = node2
-node2.next = node3
-node3.next = node4
+if __name__ == '__main__':
+    # build linked list
+    node1 = node([1,2,3])
+    node2 = node([4,5,6])
+    node3 = node([7,8])
+    node4 = node([9])
+    node1.next = node2
+    node2.next = node3
+    node3.next = node4
 
-# test
-s = Solution()
-print(s.printListFromTailToHead1(node1))
-print(s.printListFromTailToHead2(node1))
-print('-------------------------------')
-print(s.FindKthToTail1(node1, 6))
-print(s.FindKthToTail2(node1, -2))
-print(s.FindKthToTail1(node1, 2)==node3)
-print(s.FindKthToTail2(node1, 2)==node3)
-print('-------------------------------')
-print(s.ReverseLinkls(node1)==node4)
+    # test
+    s = Solution()
+    print(s.printListFromTailToHead1(node1))
+    print(s.printListFromTailToHead2(node1))
+    print('-------------------------------')
+    print(s.FindKthToTail1(node1, 6))
+    print(s.FindKthToTail2(node1, -2))
+    print(s.FindKthToTail1(node1, 2)==node3)
+    print(s.FindKthToTail2(node1, 2)==node3)
+    print('-------------------------------')
+    print(s.ReverseLinkls(node1)==node4)
