@@ -78,5 +78,5 @@ if __name__ == '__main__':
     print(s.FindKthToTail2(node1, -2))
     print(s.FindKthToTail1(node1, 2)==node3)
     print(s.FindKthToTail2(node1, 2)==node3)
-    print('-------------------------------')
-    print(s.ReverseLinkls(node1)==node4)
+    # print('-------------------------------')
+    # print(s.ReverseLinkls(node1)==node4)

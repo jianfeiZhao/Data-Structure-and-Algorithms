@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="46b1c893-410e-42cb-a7bb-caa1d0f55d91" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SwordToOffer/链表/03-12-13链表.py" beforeDir="false" afterPath="$PROJECT_DIR$/SwordToOffer/链表/03-12-13链表.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
